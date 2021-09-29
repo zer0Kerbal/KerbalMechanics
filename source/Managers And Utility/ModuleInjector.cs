@@ -169,7 +169,7 @@ namespace KerbalMechanics
 
             foreach (PartResource r in resources)
             {
-                if (r.name == resourceName)
+                if (r.resourceName == resourceName)
                 {
                     Logger.DebugWarning("Resource \"" + resourceName + "\" already added to \"" + aPart.name + "\"!");
                     return;
@@ -177,7 +177,7 @@ namespace KerbalMechanics
             }
 
             PartResource resource = aPart.partPrefab.gameObject.AddComponent<PartResource>();
-            if (!resource)
+            if (resource == null)
             {
                 Logger.DebugError("Problem adding resource to engine!");
                 return;

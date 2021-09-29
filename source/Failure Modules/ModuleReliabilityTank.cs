@@ -116,7 +116,7 @@ namespace KerbalMechanics
                         }
                     }
 
-                    if (!leak)
+                    if (leak == null)
                     {
                         Logger.DebugError("Leak \"" + leakName + "\" not found!");
                         canLeak = false;
@@ -271,7 +271,7 @@ namespace KerbalMechanics
             }
             else
             {
-                Logger.DebugError("Can't get leakables! Scene not recongnized!");
+                Logger.DebugError("Can't get leakables! Scene not recognized!");
                 return null;
             }
 

@@ -45,7 +45,7 @@ namespace KerbalMechanics
                 }
             }
 
-            if (!rocketParts)
+            if (rocketParts == null)
             {
                 Logger.DebugError("Cannot find RocketParts resource on \"" + part.name + "\"!");
             }
@@ -89,7 +89,7 @@ namespace KerbalMechanics
                 }
             }
 
-            if (!kerbalResourceBay)
+            if (kerbalResourceBay == null)
             {
                 Logger.DebugError("No resource named RocketParts found in Kerbal \"" + kerbalTaking.partInfo.title + "\"!");
                 return;
@@ -125,7 +125,7 @@ namespace KerbalMechanics
                 }
             }
 
-            if (!kerbalResourceBay)
+            if (kerbalResourceBay == null)
             {
                 Logger.DebugError("No resource named RocketParts found in Kerbal \"" + kerbalStoring.partInfo.title + "\"!");
                 return;
@@ -134,7 +134,7 @@ namespace KerbalMechanics
             Logger.DebugLog("Amount in Kerbal: " + kerbalResourceBay.amount.ToString());
             double amountTransferring = kerbalStoring.RequestResource("RocketParts", rocketParts.maxAmount - rocketParts.amount);
             Logger.DebugLog("Amount transferring: " + amountTransferring.ToString());
-            
+
             rocketParts.amount += amountTransferring;
         }
         #endregion

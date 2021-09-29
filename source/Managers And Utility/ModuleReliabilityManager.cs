@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using System.Reflection;
 
 namespace KerbalMechanics
 {
@@ -321,7 +322,7 @@ namespace KerbalMechanics
             }
             if (m == null)
             {
-                Logger.DebugError("Symetrical module couldn't be found!");
+                Logger.DebugError("Symmetrical module couldn't be found!");
                 return;
             }
 
@@ -400,7 +401,7 @@ namespace KerbalMechanics
 
             if (HighLogic.LoadedSceneIsEditor)
             {
-                //Disable symetry checkbox if there are no symetry counterparts.
+                //Disable symmetry checkbox if there are no symmetry counterparts.
                 if (part.symmetryCounterparts.Count == 0)
                 {
                     GUI.enabled = false;
@@ -434,6 +435,16 @@ namespace KerbalMechanics
 
             //Drag Window
             GUI.DragWindow();
+        }
+
+        public float GetModuleCost(float defaultCost, ModifierStagingSituation sit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ModifierChangeWhen GetModuleCostChangeWhen()
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
